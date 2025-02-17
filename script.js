@@ -2,9 +2,12 @@
 const output  = document.getElementById('output');
 
 document.addEventListener('click', ()=>{
-	const fun = new Promise(()=>{
+	const fun = new Promise((resolve, reject)=>{
 		setTimeout(()=>{
-			output.innerHTML = `<h1>Hello, world!</h1>`;
+			resolve('Hello, world!'); 
 		}, 1000)
+	})
+	fun.then(message =>{
+		output.innerHTML = `<h1>${message}</h1>`;
 	})
 })
