@@ -1,13 +1,13 @@
-//your JS code here. If required.
-const output  = document.getElementById('output');
+const output = document.getElementById('output');
 
-document.addEventListener('click', ()=>{
-	const fun = new Promise((resolve, reject)=>{
-		setTimeout(()=>{
-			resolve('Hello, world!'); 
-		}, 1000)
-	})
-	fun.then(message =>{
-		output.innerHTML = `<h1>${message}</h1>`;
-	})
-})
+// Create a Promise that resolves after 1 second
+const fun = new Promise((resolve) => {
+  setTimeout(() => {
+    resolve("Hello, world!");
+  }, 1000);
+});
+
+// When the Promise resolves, update the output div
+fun.then((message) => {
+  output.innerHTML = `<h1>${message}</h1>`;
+});
